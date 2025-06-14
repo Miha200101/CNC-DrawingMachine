@@ -1,0 +1,7 @@
+http://chilipeppr.com/grbl#
+
+host server -> serial post -> port list selectam
+
+AXES ->> AXES(casuta) + G92X0Y0Z0(zero out-configuratia de 0) 
+
+DIYM-testv2.gcode

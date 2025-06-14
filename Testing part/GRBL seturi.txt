@@ -1,0 +1,69 @@
+$0=10 (step pulse, usec)
+- setează lungimea unui semnal de puls pentru fiecare pas al motorului în microsecunde.
+$1=25 (step idle delay, msec)
+-controlează întârzierea între pașii (steps) consecutivi atunci când motorul CNC este în stare de inactivitate
+$2=0 (step port invert mask:00000000)
+-controlează inversarea semnalului de pas (step) ( directia in care merge pt $2=2 inversam x ul)
+$3=0 (dir port invert mask:00000000)
+-- Acest parametru controlează dacă semnalul de direcție pentru fiecare axă este inversat sau nu
+$4=0 (step enable invert, bool)
+-- Acest parametru controlează dacă semnalul de activare a pașilor este inversat sau nu.
+$5=0 (limit pins invert, bool)
+-- Acest parametru controlează dacă semnalele limită sunt inversate sau nu. 
+$6=0 (probe pin invert, bool)
+-- Acest parametru controlează dacă semnalul de probă este inversat sau nu
+$10=3 (status report mask:00000011)
+-- Acest parametru controlează ce informații sunt raportate în timpul funcționării mașinii CNC.(3 - pozitia curenta si limitele de lucru)
+$11=0.010 (junction deviation, mm)
+--  Acest parametru specifică cât de mult mașina CNC poate devia de la o linie dreaptă în timpul deplasării.
+$12=0.002 (arc tolerance, mm)
+-- Acest parametru specifică toleranța pentru interpolarea arcului
+$13=0 (report inches, bool)
+-- Acest parametru controlează dacă rapoartele sunt exprimate în inch sau în mm
+$20=0 (soft limits, bool)
+-- Acest parametru controlează dacă mașina CNC utilizează limite software pentru a evita deplasările în afara limitelor de lucru
+$21=0 (hard limits, bool)
+-- Acest parametru controlează dacă mașina CNC utilizează limite hardware pentru a evita deplasările în afara limitelor de lucru
+
+------ cautare -----
+
+$22=1 (homing cycle, bool)
+-- Acest parametru controlează dacă mașina CNC efectuează un ciclu complet de orientare la zero înainte de începerea operațiilor. 
+$23=3 (homing dir invert mask:00000011)
+-- Acest parametru controlează dacă semnalele de direcție în timpul orientarii la zero sunt inversate sau nu pentru fiecare axă
+$24=200.000 (homing feed, mm/min)
+-- viteza deplasării în timpul orientarii la zero, exprimată în milimetri pe minut
+$25=1500.000 (homing seek, mm/min)
+-- viteza căutării în timpul orientarii la zero, exprimată în milimetri pe minut
+
+$26=250 (homing debounce, msec)
+$27=5.000 (homing pull-off, mm)
+-- Valoarea 5.000 înseamnă că mașina CNC se va retrage cu o distanță de 5 mm înainte de a se îndrepta spre comutatoarele de orientare la zero.
+
+$100=40.000 (x, step/mm) (45-> merge)
+-- Acest parametru specifică numărul de pași pe milimetru pentru axa X a mașinii CNC.
+$101=40.000 (y, step/mm)
+$102=250.000 (z, step/mm)
+
+
+-- pt deplasare 
+
+$110=10000.000 (x max rate, mm/min)
+-- viteza maximă pe axa x, exprimată în milimetri pe minut
+$111=10000.000 (y max rate, mm/min)
+$112=500.000 (z max rate, mm/min)
+
+$120=100.000 (x accel, mm/sec^2)
+-- accelerație pe axa X, exprimată în milimetri pe secundă la pătrat
+$121=100.000 (y accel, mm/sec^2)
+$122=10.000 (z accel, mm/sec^2)
+
+$130=250.000 (x max travel, mm)
+-- deplasare maximă pe axa X, exprimată în milimetri (200)
+$131=300.000 (y max travel, mm)
+$132=200.000 (z max travel, mm)
+
+
+
+$130=250.000 (x max travel, mm)
+$131=300.000 (y max travel, mm)
